@@ -44,11 +44,14 @@ module.exports = (_, argv) => ({
   plugins: [
     new ModuleFederationPlugin({
       name: "consumer-app",
+      library: {type: "var", name: "consumer_app"},
       filename: "remoteEntry.js",
       remotes: {
         exports_app: "exports_app@https://export-app.vercel.app/remoteEntry.js",
       },
-      exposes: {},
+      exposes: {
+        atoms: "./src/atoms"
+      },
       shared: {
         ...deps,
         react: {
