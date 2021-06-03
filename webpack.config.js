@@ -50,7 +50,7 @@ module.exports = (_, argv) => ({
         exports_app: "exports_app@https://export-app.vercel.app/remoteEntry.js",
       },
       exposes: {
-        atoms: "./src/atoms"
+        "./atoms": "./src/atoms"
       },
       shared: {
         ...deps,
