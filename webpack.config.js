@@ -7,7 +7,7 @@ module.exports = (_, argv) => ({
     publicPath:
     argv.mode === "development"
     ? "http://localhost:8080/"
-    : "https://consumer-app-qenuaupmi-sychevandrey.vercel.app/",
+    : "https://consumer-app.vercel.app/",
   },
 
   resolve: {
@@ -45,7 +45,6 @@ module.exports = (_, argv) => ({
     new ModuleFederationPlugin({
       name: "consumer-app",
       filename: "remoteEntry.js",
-      remotes: {},
       exposes: {},
       shared: {
         ...deps,
